@@ -11,20 +11,30 @@ let package = Package(
         .tvOS(.v9)
     ],
 
+  // products: [
+  //   .library(
+  //     name: "gRPC-Core",
+  //     targets: [
+  //       "gRPC-Core",
+  //     ]
+  //   ),
+  //   .library(
+  //     name: "gRPC-cpp",
+  //     targets: [
+  //       "gRPC-cpp",
+  //     ]
+  //   )
+  // ],
+
   products: [
     .library(
-      name: "gRPC-Core",
+      name: "gRPC",
       targets: [
-        "gRPC-Core",
-      ]
-    ),
-    .library(
-      name: "gRPC-cpp",
-      targets: [
-        "gRPC-cpp",
+        "gRPC",
       ]
     )
   ],
+
 
   dependencies: [
     .package(name: "abseil", url: "https://github.com/paulb777/abseil-cpp.git", .revision("6a901b3")),
@@ -33,7 +43,7 @@ let package = Package(
 
   targets: [
     .target(
-      name: "gRPC-Core",
+      name: "gRPC",
       dependencies: [
         .product(name:"abseil", package: "abseil"),
         .product(name:"openssl_grpc", package: "BoringSSL-GRPC"),
@@ -929,26 +939,26 @@ let package = Package(
         "third_party/upb/upb/table.int.h",
         "third_party/upb/upb/upb.c",
         "third_party/upb/upb/upb.h",
-      ],
-      publicHeadersPath: ".",
-      cSettings: [
-        .headerSearchPath("./"),
-        .headerSearchPath("include/"),
-        .headerSearchPath("third_party/upb/"),
-        .headerSearchPath("src/core/ext/upb-generated"),
-  //      .headerSearchPath("../openssl_grpc/include"),
-        .define("GRPC_ARES", to: "0"),
-        .unsafeFlags(["-Wno-module-import-in-extern-c"]),
-      ]
-    ),
-    .target(
-      name: "gRPC-cpp",
-      dependencies: [
-        .product(name:"abseil", package: "abseil"),
-        "gRPC-Core",
-      ],
-      path: ".",
-      sources: [
+  //     ],
+  //     publicHeadersPath: ".",
+  //     cSettings: [
+  //       .headerSearchPath("./"),
+  //       .headerSearchPath("include/"),
+  //       .headerSearchPath("third_party/upb/"),
+  //       .headerSearchPath("src/core/ext/upb-generated"),
+  // //      .headerSearchPath("../openssl_grpc/include"),
+  //       .define("GRPC_ARES", to: "0"),
+  //       .unsafeFlags(["-Wno-module-import-in-extern-c"]),
+  //     ]
+  //   ),
+  //   .target(
+  //     name: "gRPC-cpp",
+  //     dependencies: [
+  //       .product(name:"abseil", package: "abseil"),
+  //       "gRPC-Core",
+  //     ],
+  //     path: ".",
+  //     sources: [
         "include/grpcpp/alarm.h",
         "include/grpcpp/alarm_impl.h",
         "include/grpcpp/channel.h",
@@ -1534,6 +1544,7 @@ let package = Package(
         .headerSearchPath("third_party/upb/"),
         .headerSearchPath("src/core/ext/upb-generated"),
         .unsafeFlags(["-Wno-module-import-in-extern-c"]),
+        .define("GRPC_ARES", to: "0"),
       ]
     ),
   ],

@@ -40,6 +40,7 @@ let package = Package(
       ],
       path: ".",
       exclude: [
+        "src/cpp/common/insecure_create_auth_context.cc",
         "src/core/ext/filters/load_reporting/",
         "src/core/ext/filters/client_channel/lb_policy/grpclb/grpclb_channel.cc",
         "src/core/ext/filters/client_channel/xds/xds_channel.cc",

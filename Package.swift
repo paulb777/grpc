@@ -85,7 +85,7 @@ let package = Package(
       sources: [
         "src/cpp/",
       ],
-      publicHeadersPath: ".",
+      publicHeadersPath: "spm-cpp-include",
       cSettings: [
         .headerSearchPath("./"),
         .headerSearchPath("include/"),

@@ -44,6 +44,7 @@ let package = Package(
         "src/core/ext/filters/client_channel/lb_policy/grpclb/grpclb_channel.cc",
         "src/core/ext/filters/client_channel/xds/xds_channel.cc",
         "src/core/ext/transport/cronet",
+        "src/core/lib/surface/init_unsecure.cc",
         "src/core/plugin_registry/grpc_unsecure_plugin_registry.cc",
         "third_party/upb/upb/bindings/",
       ],

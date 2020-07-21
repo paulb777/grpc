@@ -51,7 +51,7 @@ let package = Package(
         "src/core/ext/filters/",
         "src/core/ext/transport/",
         "src/core/ext/upb-generated/",
-        "src/core/lib/avl/",
+        "src/core/lib/",
         "src/core/plugin_registry/grpc_plugin_registry.cc",
         "src/core/tsi/",
         "third_party/upb/upb/",

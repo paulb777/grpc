@@ -28,7 +28,7 @@ let package = Package(
 
   dependencies: [
     .package(name: "abseil", url: "https://github.com/paulb777/abseil-cpp.git", .revision("6a901b3")),
-    .package(name: "BoringSSL-GRPC", url: "https://github.com/paulb777/boringssl.git", .revision("fc8c6b0a")),
+    .package(name: "BoringSSL-GRPC", url: "https://github.com/paulb777/boringssl.git", .revision("8e21cdcc7")),
   ],
 
   targets: [
@@ -75,6 +75,7 @@ let package = Package(
       ],
       path: ".",
       exclude: [
+        "src/cpp/client/cronet_credentials.cc",
         "src/cpp/common/insecure_create_auth_context.cc",
         "src/cpp/ext/",
         "src/cpp/server/channelz/",
